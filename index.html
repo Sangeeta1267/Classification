@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cat or Dog? – Image Classifier</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <h1>Cat or dog?</h1>
+    <p class="sub">Upload a photo and the model will tell you which one it sees.</p>
+
+    <label class="dropzone" id="dropzone" for="file-input">
+      <input type="file" id="file-input" accept="image/*" hidden />
+      <img id="preview" alt="Preview of the uploaded image" hidden />
+      <span id="drop-text">Click to choose a photo, or drag one here</span>
+    </label>
+
+    <p id="status" class="status" role="status">Loading model…</p>
+
+    <section id="results" class="results" aria-live="polite" hidden></section>
+  </main>
+
+  <!-- TensorFlow.js + Teachable Machine library (needs internet) -->
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
